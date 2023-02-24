@@ -1,0 +1,43 @@
+Write a java program that diaplsy the number of character lines and words in a art file
+
+import java.util.*;
+import java.io.*;
+class Program14
+{
+	public static void main(String args[]) throws IOException
+	{
+		int nl=0,nw=0,numWord,numChar;
+		char ch;
+		Scanner sc=new Scanner(System.in);
+
+		try
+		{
+			System.out.print("\n Enter File name: ");
+			String str=sc.next();
+			FileInputStream f=new FileInputStream(str);
+			int n=f.available();
+			System.out.println(n);
+	
+			for(int i=0;i<n;i++)
+			{
+				ch=(char)f.read();
+				if(ch=='\n')
+				nl++;
+				else if(ch==' ')
+				nw++;
+			}
+		
+			numWord=nl+nw;
+			numChar=(n-(nw+(2*nl)));
+			System.out.println("\n Number of lines : "+nl);
+			System.out.println("\n Number of words : "+numWord);
+			System.out.println("\n Number of characters : "+numChar);
+		}
+
+		catch(FileNotFoundException e)
+		{
+			System.out.println("No such file found");
+			return;
+		}
+	}
+}
