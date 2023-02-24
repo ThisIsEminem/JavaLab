@@ -1,0 +1,45 @@
+// Sum of series and  display of series like 1 12 123 1234 12345
+import java.util.*;
+
+class PBP5
+{
+	public static void main(String args[]) 
+	{
+		Scanner sc = new Scanner(System.in);
+ 		System.out.println("1. Sum of the series");
+		System.out.println("2. Display series");
+		System.out.println("");
+		System.out.println("Enter your choice: ");
+		int ch = sc.nextInt();
+
+        	switch (ch) 
+	{
+	            case 1:
+		            int sum = 0;
+		            for (int i = 1; i <= 5; i++) 
+		{
+		            int term = (int)Math.pow(2, i);
+		            	if (i % 2 == 0)
+			            sum -= term;
+		                else
+			            sum += term;
+           	 	}
+
+	            System.out.println("Sum=" + sum);
+	            break;
+            
+            	           case 2:
+		            int num = 0;
+		            for (int i = 1; i <= 5; i++) 
+			{
+			            num = num * 10 + i;
+			            System.out.print(num + " ");
+            			}
+            	            break;
+            
+           	           default:
+	           System.out.println("Incorrect Choice");
+                             break;
+        	}
+   	}
+}
