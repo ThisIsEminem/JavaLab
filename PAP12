@@ -1,0 +1,60 @@
+//Write a menu driven program to draw differetn geometrical figures with menu options like 1)Draw line
+  2) Draw Rectangle 3) Draw Ellipse 4) Draw poloygon
+  
+import java.awt.*;
+import java.applet.*;
+import java.util.*;
+
+public class Program12 extends Applet
+{
+	/* 
+	<applet code="Program12.class" width=500 height=500>
+	</applet>
+	 */
+
+	public void paint(Graphics g)
+	{
+		int ch;
+		Scanner sc = new Scanner(System.in);
+	do
+	{
+		System.out.println("1) Draw Line");
+		System.out.println("2) Draw Rectangle");
+		System.out.println("3) Draw Ellipse");
+		System.out.println("4) Draw Polygon");
+		System.out.print("Make your choice: ");
+		ch = sc.nextInt();
+	
+		switch (ch)
+		{
+			case 1:
+				System.out.print("Drawing Line");
+				g.setColor(Color.red);
+				g.drawLine(25,25,75,75);
+				break;
+			case 2:
+				System.out.print("Drawing Rectangle");
+				g.setColor(Color.blue);
+				g.drawRect(25,80,200,100);
+				g.fillRect(50,160,200,100);
+				break;
+			case 3:
+				System.out.print("Drawing Ellipse");
+				g.setColor(Color.green);
+				g.drawOval(20,200,60,90);
+				break;
+			case 4:
+				System.out.print("Drawing Polygon");
+				int x[]={20,20,80,80};
+				int y[]={300,360,360,300};
+				g.setColor(Color.yellow);
+				g.drawPolygon(x,y,x.length);
+				break;
+			default: 
+				System.out.println("Enter Valid Choice");
+				break;
+		}	
+	}while(ch<5);
+
+	}
+}
