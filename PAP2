@@ -1,0 +1,25 @@
+//Write a java program that compute the areas of the different shapes like Square, Rectangle and circle using function overloadimg
+
+import java.util.*;
+class Program2
+{
+	static void area(float s)
+	{
+		System.out.println("Area of Square = " +Math.pow(s,2) + "Sq. Units");
+	}
+	static void area(float x, float y)
+	{
+		System.out.println("Area of Rectangle = " +x*y + "Sq. Units");
+	}
+	static void area(double r)
+	{
+		
+		System.out.println("Area of circle = " +3.14*r*r+ "Sq. Units");
+	}
+public static void main(String args[])
+{	
+	Program2.area(3);
+	Program2.area(3,4);
+	Program2.area(5.0);
+}
+}
