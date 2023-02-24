@@ -1,0 +1,29 @@
+//Write a program with multiple catch clauses to handle exceptions like ArithmeticException, IOException and ArrayIndexOutofBoundsException.
+
+class Program9
+{
+	public static void main(String args[])
+	{
+		int i, j, k;
+		try
+		{
+			i= Integer.parseInt(args[0]); 
+			j= Integer.parseInt(args[1]);
+			k=i/j;
+			System.out.println("k=" + k);
+		}
+		catch(ArithmeticException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("caught ArrayIndexOutOfBoundsException");
+		}
+		catch (NumberFormatException e)
+		{
+			System.out.println("Type mismatch error");
+		}
+		System.out.println("Normal Exit from main()");
+	}
+}
