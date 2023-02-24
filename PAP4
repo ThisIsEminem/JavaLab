@@ -1,0 +1,78 @@
+//Write a java program to calculate the areas of different geometrical figures using abstract class
+
+import java.util.*;
+
+abstract class AbsDemo
+{
+	float l,b,r,s;
+	Scanner sc = new Scanner(System.in);
+	abstract void get();
+	abstract void display();
+}
+
+class area extends AbsDemo
+{
+	void get()
+	{	
+		System.out.println("Enter the value of radius");
+		r=sc.nextFloat();
+	}
+	
+	void display()
+	{
+		System.out.println("Area of Circle= " +3.14*r*r);
+	}	
+}
+
+class area1 extends AbsDemo
+{
+	void get()
+	{	
+		System.out.println("*********");
+		System.out.println("");
+		System.out.println("Enter the value of length");
+		l=sc.nextFloat();
+		System.out.println("Enter the value of breadth");
+		b=sc.nextFloat();
+	}
+	
+	void display()
+	{
+		System.out.println("Area of Rectangle= " +l*b);
+	}	
+}
+
+class area2 extends AbsDemo
+{
+	void get()
+	{	
+		System.out.println("*********");
+		System.out.println("");
+		System.out.println("Enter the value of side");
+		s=sc.nextFloat();
+	}
+	
+	void display()
+	{
+		System.out.println("Area of Square= " +s*s);
+	}		
+}
+
+
+class Program4
+{
+	public static void main(String args[])
+	{
+		area a=new area();
+		a.get();
+		a.display();
+	
+		area1 a1=new area1();
+		a1.get();
+		a1.display();
+		
+		area2 a2=new area2();
+		a2.get();
+		a2.display();
+	}
+}
