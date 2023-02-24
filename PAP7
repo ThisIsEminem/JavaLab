@@ -1,0 +1,41 @@
+//Multithreading program
+
+class Thread1 extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=15;i++)
+		{
+			if(i%2 == 0)
+			System.out.println(Thread.currentThread().getName() + "="+ i);
+		}
+		System.out.println("End of Even number Thread");
+		System.out.println("");
+	}
+}
+
+class Thread2 extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=15;i++)
+		{
+			if(i%2 != 0)
+			System.out.println(Thread.currentThread().getName() + "="+ i);
+		}
+		System.out.println("End of odd number Thread");
+	}
+}
+
+class Program7
+{
+	public static void main(String args[])
+	{
+		Thread1 even=new Thread1();
+		Thread t1=new Thread(even,"Thread for Even numbers");
+		t1.start();
+		Thread2 odd=new Thread2();
+		Thread t2=new Thread(odd,"Thread for Odd numbers");
+		t2.start();
+	}
+}
