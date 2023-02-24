@@ -1,0 +1,22 @@
+//Write a program that implements stack class using a Stack class, which has the
+//methods push and pop for pushing and popping the values respectively.
+
+import java.util.*;
+class Program1 
+{
+  	public static void main(String[] args) 
+	{
+		Stack<String> colors= new Stack<>();
+		colors.push("Red");
+		colors.push("Blue");
+		colors.push("Green");
+		colors.push("Yellow");
+		System.out.println("Stack: " + colors);
+		colors.pop();
+		System.out.println("Stack after pop: " + colors.pop());
+		System.out.println("Stack after pop: " + colors);
+		colors.pop();
+		System.out.println("Stack after pop: " + colors.pop());
+		System.out.println("Stack after pop: " + colors);
+	}
+}
