@@ -1,0 +1,87 @@
+//Write an applet that demonstrate the usage of any two mouse and keyboard events
+
+[9:38 am, 19/02/2023] +91 97398 93939: import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+import java.util.*;
+
+public class Program11_Key extends Applet implements KeyListener
+{
+	/* 
+	<applet code="Program11_Key.class" width=500 height=500>
+	</applet>
+	 */
+
+	String msg="Demonstration of Key Events";
+	
+	public void init()
+	{
+		addKeyListener(this);
+		requestFocus();
+		setBackground(Color.yellow);
+		setForeground(Color.red);
+	}
+
+	public void keyTyped(KeyEvent k)
+	{
+		msg+=k.getKeyChar();
+		repaint();
+	}
+			
+	public void keyPressed(KeyEvent k)
+	{
+		showStatus("Key Pressed");
+	}
+
+	public void keyReleased(KeyEvent k)
+	{
+		showStatus("Key Released");
+	}
+
+	public void paint(Graphics g)
+	{
+		g.drawString(msg,15,15);
+		
+	}
+}
+[9:38 am, 19/02/2023] +91 97398 93939: import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+import java.util.*;
+
+
+public class Program11_Mouse extends Applet implements MouseMotionListener
+{
+	/* 
+	<applet code="Program11_Mouse.class" width=500 height=500>
+	</applet>
+	 */
+
+	int X=20,Y=50;
+	String msg="MouseEvents";
+	public void init()
+	{
+		addMouseMotionListener(this);
+		setBackground(Color.black);
+		setForeground(Color.red);
+	}
+
+	public void mouseMoved(MouseEvent m)
+	{
+		setBackground(Color.red);
+		showStatus("Mouse Moved");
+		repaint();
+	}
+
+	public void mouseDragged(MouseEvent m)
+	{
+		setBackground(Color.yellow);
+		showStatus("Mouse Dragged");
+		repaint();
+	}
+
+	public void paint(Graphics g)
+	{
+		g.drawString(msg, X, Y);
+	}
+}
