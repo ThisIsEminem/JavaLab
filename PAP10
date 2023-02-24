@@ -1,0 +1,26 @@
+//Write an appplet which reveives font name and fontsize as parameters and displays a string using these parameters
+
+import java.applet.*;
+import java.awt.*;
+
+/*
+<applet code="Program10" width="300" height="300">  
+</applet>  
+*/
+
+public class Program10 extends Applet
+{
+	Font f1,f2;
+	public void init ()
+	{
+		f1=new Font("Times of New Roman", Font.BOLD, 25);
+		f2=new Font("Stencil Std", Font.ITALIC, 15);
+	}
+	public void paint(Graphics g)
+	{
+		g.setFont(f1);
+		g.drawString("Seshadripuram College", 50, 50);
+		g.setFont(f2);
+		g.drawString("Seshadripuram College", 100, 200);
+	}
+}
