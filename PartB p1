@@ -1,0 +1,18 @@
+//To illustrate operator precedence in arithmetic operators 
+
+class PBP1
+{
+	public static void main(String args[])
+	{
+		int a=4, b=6, c=-3, d, e, f, g;
+		System.out.println("A= " + a +" B= " + b + " C= " +c);
+		d=-a+b*c;
+		System.out.println("-a + b * c = " + d);
+		e = (a + b) * c; 
+		System.out.println("(a + b) * c = "+e);
+		f=a*b/c;	
+		System.out.println("a*b/c= " +f);
+		g=a * (b/c);
+		System.out.println("a *(b/c)= "+g);
+	}
+}
