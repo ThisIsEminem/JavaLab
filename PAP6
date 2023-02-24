@@ -1,0 +1,32 @@
+//WAP to demonstrate the creation and import of packages
+
+package p6;
+public class A
+{
+	int i=10;
+	public void display()
+	{
+		System.out.println("i from class A = " +i);
+	}
+}
+import p6.A;
+class B extends A
+{
+	int j=20;
+	public void display()
+	{
+		super.display();
+		System.out.println("j from class B = " +j);
+	}
+}
+
+class Program6
+{
+	public static void  main(String args[])
+	{
+		A a = new A();
+		a.display();
+		B b = new B();
+		b.display();
+	}
+}
