@@ -1,0 +1,28 @@
+//To generate prime numbers within a range of numbers
+
+import java.util.*;
+
+class PBP3
+{
+	public static void main(String args[])
+	{
+		int m, n, i, j, k;
+		boolean flag;
+		Scanner sc= new Scanner(System.in);
+		System.out.println("Enter Lower limit");
+		m=sc.nextInt();
+		System.out.println("Enter Upper limit");
+		n=sc.nextInt();
+		System.out.println("prime numbers between "+m +" and " +n);
+		for (i=m; i <= n; i++)
+		{
+			k=i;
+			flag= true;
+			for(j= 2; (j<=k/2) && flag; j++)
+			if(k%j==0)
+			flag = false;
+			if (flag)
+			System.out.println(i);
+		}
+	}
+}
