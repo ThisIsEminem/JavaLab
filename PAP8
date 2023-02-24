@@ -1,0 +1,69 @@
+//WAP a multithreaded program by implementing the runnable interface which demonstrates synchronization
+  and interthread communication
+  
+  class Thread1 implements Runnable
+{
+	Table t;
+	Thread1(Table t)
+	{
+		this.t=t;
+	}
+
+	public void run()
+	{
+		t.Print(2);
+	}
+//System.out.println("");
+}
+
+class Thread2 implements Runnable
+{
+	Table t;
+	Thread2(Table t)
+	{
+		this.t=t;
+	}
+
+	public void run()
+	{
+		t.Print(5);
+	}
+//System.out.println("");
+}
+
+class Table
+{
+	synchronized void Print(int n)
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(n*i);
+			try
+			{
+				Thread.sleep(300);
+			}
+			catch(Exception e)
+			{
+				System.out.println(e);
+			}
+		}
+			System.out.println("");		
+	}
+}
+
+class Program8
+{
+	public static void main(String args[])
+	{
+		Table t=new Table();
+
+		Thread1 one=new Thread1(t);
+		Thread t1=new Thread(one);
+
+		Thread2 two=new Thread2(t);
+		Thread t2=new Thread(two);
+
+		t1.start();
+		t2.start();
+	}
+}
