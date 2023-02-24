@@ -1,0 +1,24 @@
+/To find the largest of three numbers
+
+import java.util.*;
+
+class PBP2
+{
+	public static void main(String args[])
+	{
+		int a, b, c, l;
+		Scanner sc = new Scanner(System.in); 
+		System.out.println("Enter the value of a");
+		a = sc.nextInt();
+		System.out.println("Enter the value of b");
+		b = sc.nextInt();
+		System.out.println("Enter the value of c ");
+		c = sc.nextInt();
+		l =a;
+		if (b > 1)
+		l = b;
+		if (c >1)
+		l=c;
+		System.out.println("Largest is = " +l);
+	}
+}
